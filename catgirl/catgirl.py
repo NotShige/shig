@@ -18,6 +18,7 @@ class Catgirl(BaseCog):
         self.session = aiohttp.ClientSession()
         self.catgirlapi = "https://nekos.best/api/v2/neko"
         self.nsfwcatgirlapi = "http://api.nekos.fun:8080/api/lewd" #tnx rosie
+        self.testapi = "https://picsum.photos/id/0/info"
         self.error_message = "Error."
 
     @commands.command()
@@ -37,6 +38,16 @@ class Catgirl(BaseCog):
             async with self.session.get(self.nsfwcatgirlapi) as r:
                 result = await r.json()
             await ctx.send(result['image'])
+        except:
+            await ctx.send(result)
+
+    @commands.command()
+    @commands.cooldown(1, 60, commands.BucketType.guild)
+    async def test(self, ctx):
+        try:
+            async with self.session.get(self.testapi) as r:
+                result = await r.json()
+            await ctx.send(result['download_url'])
         except:
             await ctx.send(result)
 
