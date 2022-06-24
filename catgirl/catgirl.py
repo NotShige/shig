@@ -28,7 +28,7 @@ class Catgirl(BaseCog):
                 result = await r.json()
             await ctx.send(result['url'])
         except:
-            await ctx.send(self.error_message)
+            await ctx.send(result)
 
     @commands.command()
     @commands.cooldown(1, 60, commands.BucketType.guild)
@@ -38,7 +38,7 @@ class Catgirl(BaseCog):
                 result = await r.json()
             await ctx.send(result['image'])
         except:
-            await ctx.send(self.error_message)
+            await ctx.send(result)
 
     def cog_unload(self):
         self.bot.loop.create_task(self.session.close())
