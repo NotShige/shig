@@ -16,7 +16,7 @@ class Catgirl(BaseCog):
     def __init__(self, bot):
         self.bot = bot
         self.session = aiohttp.ClientSession()
-        self.catgirlapi = "https://nekos.best/api/v2/neko"
+        self.catgirlapi = "http://api.nekos.fun:8080/api/neko"
         self.nsfwcatgirlapi = "http://api.nekos.fun:8080/api/lewd" #tnx rosie
         self.testapi = "https://picsum.photos/id/0/info"
         self.error_message = "Error."
