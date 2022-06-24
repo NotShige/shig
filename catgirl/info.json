@@ -1,0 +1,10 @@
+{
+    "author" : ["notshige"],
+    "install_msg" : "nya",
+    "name" : "Catgirl",
+    "short" : "Catgirl command",
+    "description" : "Just a catgirl command",
+    "disabled" : false,
+    "tags" : ["catgirl", "nsfwcatgirl"],
+    "min_python_version": [3, 6, 0]
+}
