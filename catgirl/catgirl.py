@@ -26,7 +26,7 @@ class Catgirl(BaseCog):
         try:
             async with self.session.get(self.catgirlapi) as r:
                 result = await r.json()
-            await ctx.send(result['file'])
+            await ctx.send(result[0])
         except:
             await ctx.send(self.error_message)
 
@@ -36,7 +36,7 @@ class Catgirl(BaseCog):
         try:
             async with self.session.get(self.nsfwcatgirlapi) as r:
                 result = await r.json()
-            await ctx.send(result['file'])
+            await ctx.send(result[0])
         except:
             await ctx.send(self.error_message)
 
