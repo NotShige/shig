@@ -34,7 +34,7 @@ class Catgirl(BaseCog):
     @commands.cooldown(1, 60, commands.BucketType.guild)
     async def nsfwcatgirl(self, ctx):
         try:
-            async with self.session.get(self.catgirlapi) as r:
+            async with self.session.get(self.nsfwcatgirlapi) as r:
                 result = await r.json()
             await ctx.send(result['file'])
         except:
