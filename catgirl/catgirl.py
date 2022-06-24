@@ -27,7 +27,7 @@ class Catgirl(BaseCog):
         try:
             async with self.session.get(self.catgirlapi) as r:
                 result = await r.json()
-            await ctx.send(result['url'])
+            await ctx.send(result['image'])
         except:
             await ctx.send(result)
 
