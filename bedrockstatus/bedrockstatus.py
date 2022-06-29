@@ -16,7 +16,7 @@ class BedrockStatus(BaseCog):
 
     @commands.command()
     @commands.cooldown(1, 60, commands.BucketType.guild)
-    async def catgirl(self, ctx):
+    async def bedrockstatus(self, ctx):
         try:
             async with bdstatus() as r:
                 result = await r.json()
