@@ -1,0 +1,11 @@
+{
+    "author" : ["notshige"],
+    "install_msg" : "hi",
+    "name" : "bedrockstatus",
+    "short" : "bedrock server status",
+    "description" : "check the status for a berock server",
+    "disabled" : false,
+	"requirements" : ["mcstatus"],
+    "tags" : ["catgirl", "nsfwcatgirl"],
+    "min_python_version": [3, 6, 0]
+}
