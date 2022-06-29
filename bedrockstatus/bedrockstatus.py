@@ -5,19 +5,20 @@ from redbot.core.utils.menus import DEFAULT_CONTROLS, menu
 from mcstatus import BedrockServer
 
 BaseCog = getattr(commands, "Cog", object)
+serverip = "sg2.tortoises.studio:4004"
+bdstatus = BedrockServer.lookup(serverip)
 
 class BedrockStatus(BaseCog):
 
     def __init__(self, bot):
         self.bot = bot
-        self.server = "sg2.tortoises.studio:4004"
         self.error_message = "Error."
 
     @commands.command()
     @commands.cooldown(1, 60, commands.BucketType.guild)
     async def catgirl(self, ctx):
         try:
-            async with BedrockServer.lookup(self.server) as r:
+            async with bdstatus() as r:
                 result = await r.json()
             await ctx.send(result)
         except:
